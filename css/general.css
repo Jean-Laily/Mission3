@@ -1,0 +1,51 @@
+/* Remove the navbar's default rounded borders and increase the bottom margin */ 
+.navbar {
+  margin-bottom: 50px;
+  border-radius: 0;
+}
+
+/* Remove the jumbotron's default bottom margin */ 
+ .jumbotron {
+  margin-bottom: 0;
+}
+
+/* Add a gray background color and some padding to the footer */
+#lienFooter {
+  background-color: #f2f2f2;
+  /* padding: 25px; */
+}
+
+.fakeimg {
+  height: 200px;
+  background: #aaa;
+}
+
+@media only screen and (max-width: 501px) {
+
+  #meteoDiv input{
+    width: 25vw !important;
+    margin-left: auto !important;
+  }
+
+  #meteoDiv h5,p{
+    font-size: 12px !important;
+    text-justify: auto;
+  }
+
+  .affiche h2,h3{
+    font-size: 2px !important;
+  }
+
+} 
+
+@media only screen and (max-width: 767px) {
+  
+  #logoEBD{
+    margin-top: 10px;
+  }
+
+  /* #meteoDiv{
+    margin: -15px 0 0 0;
+  } */
+
+}

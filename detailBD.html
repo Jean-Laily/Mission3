@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>E-BDDrive</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/general.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="container border border-dark">
+      <div class="row">
+        <!-- <div > -->
+          <div class="col-md-4 text-md-center">                     <!-- debut logo/Nom apps -->
+            <h1><a type="button" href="./index.html">E-BDDrive</a></h1>
+            <p class="d-none d-md-block">Vente de Bande-Dessiné en ligne!</p>
+          </div>                                  <!-- fIn logo/Nom apps -->
+          <!-- API Méteo emplacement -->
+          <div class="col-md-4 "> 
+              <div class="col-md " >
+                <h5 id="nomCitie" ></h5>
+              </div>
+              <div class="col-md d-flex p-2">
+                <img id="iconWidget" height="45" width="45" alt="iconsMeteo" src="http://openweathermap.org/images/transparent.png" />
+                <p id="temperature" style="font-size: 28px; font-weight: bold; margin-left: 10px;"></p>
+              </div>
+            <div class="col-md">
+              <input type="text" id="saisiVille" style="width: 150px; height: 25px;" placeholder="Entrer un ZIP/Ville...."/>
+            </div>
+          </div>
+          <!-- fin affichage API meteo -->
+
+          <div class="col-md-2 text-md-center">
+            <a style="margin-top:20px;" type="button" href="#"><img src="./assets/icons/person-circle.svg"  alt="icons" width="42" height="42" title="connection"><span class="d-none d-md-block"> Se connecter</span></a>
+          </div>
+          <div class="col-md-2 text-md-center">
+            <a style="margin-top:20px;" type="button" href="#"><img src="./assets/icons/cart2.svg" alt="icons" width="42" height="42" style="margin-bottom:5px;" title="Panier"><span class="d-none d-md-block"> Mon panier</span></a>
+          </div>
+        <!-- </div> -->
+      </div> <!--fin row-->
+    </div>  <!--fin container-->
+  </header>
+  
+  <div class="container ">                 <!--block de la barre de recherche et de la navigation avec panier-->
+    <div class="row">
+        <!-- code pour nav et btn hamburger -->
+        <nav class="col-md-12 navbar navbar-expand-md navbar-light" style="background-color:orange;">  <!--Creation de la barre de navigation avec possibilité de changer couleur -->
+          <!-- debut barre de recherche -->
+          <form class="form-inline">
+            <input id="saisiRecherche" class="form-control " type="search" placeholder="rechercher par: titre, auteur..." style="width: 260px; height: 25px;">
+            <button class="btn" type="submit" style="margin-left:-10px; margin-bottom: 5px;" ><img src="./assets/icons/search.svg" alt="icons" width="18" height="18" title="search"></button>
+          </form>
+          <!-- fin barre de recherche/ -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <!-- bouton hambuger qui apparait seulement quand m'est-->
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Serie</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Auteur</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Titre</a>
+              </li>  
+            </ul>
+          </div>  
+        </nav> <!--fin navigation et code hamburger-->
+    </div>
+  </div>
+
+  <div class="container">    
+      <div class="row cardPlace2">                                                                                          <!-- On defini avec my-x, le margin vertical sur une résolution d'affichage inferieur à small pour la .row et colone ci dessous -->
+        <!-- Espace test -->
+        <!-- <div class="col d-flex">
+          <div class="col-md bg-success">                                                                   
+            <img class="img-fluid" id="imgSerie" alt="image">
+          </div>
+          <div class="col-md d-flex flex-column align-items-start bg-primary">
+            <h2 class="" id="nomSerie"><h2>
+            <h3 class="" id="imageTitre"></h3>
+            <h6 class="" id="nomAuteur"></h6>
+       
+            <div class="col-md d-flex justify-content-between align-items-end">
+              <p class=" bg-secondary" id="numSerie"></p>
+              <p class=" bg-warning" id="prixBd"></p>
+            </div>
+            <div class="card-img-overlay d-flex justify-content-end align-items-end" style="width: 100%; height: 100%;">                                      
+              <button type="button" class="btn btn-light rounded-rectangle mb-5" data-toggle="button" aria-pressed="false" autocomplete="off">
+                <img src="./assets/icons/cart-plus.svg" alt="" width="22" height="22" title="addPanier"><span>Ajouter</span>
+              </button>
+            </div> 
+          </div>        
+        </div>  -->
+      </div><!--/row-->
+    </div><!--/container-->
+      
+    <div id="lienFooter" class="jumbotron row text-center" style="margin-bottom:0">
+      <div class="col-md-4 ">
+          <a  href="#">Mentions Legales</a>
+      </div>
+      <div class="col-md-4">
+          <a  href="#">Qui sommes-nous</a>
+      </div>   
+      <div class="col-md-4">
+          <a  href="#">Nous Contacter</a>
+      </div>
+    </div>
+</body>
+<script src="./meteoAPI/meteo.js"></script>
+  <script src="./js/search.js"></script>
+  <script src="./js/detailBD.js"></script>
+  <script src="./data/albums.js"></script>
+  <script src="./data/series.js"></script>
+  <script src="./data/auteurs.js"></script>
+  <script src="./js/filtre.js"></script>
+</html>

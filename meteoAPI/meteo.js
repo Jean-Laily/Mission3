@@ -39,7 +39,7 @@ $(function(){                   //ecriture alternative de $(document).ready(func
                 temp = temp.text(temper+"°C");                                                                             //concaténation de la valueur temp + string
             },
     
-            //param @error ici executera le codesi tout n'est pas ok
+            //param @error ici executera le code si tout n'est pas ok
             error: function(){
                 // alert("Ville non trouvée");
                 city = city.text("Ville inexistant"); 

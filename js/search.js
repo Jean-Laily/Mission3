@@ -11,20 +11,19 @@ var saisi ;
 
 $(document).ready(function(){       //.ready()
     
-	/**
-	* M: Permet de rechercher depuis l'input un nom de titre ou de serie
-	* O: @Param NULL
-	* I: @Param NULL
-	*
-	*/
+    // saisi = Gaudin;   //labotest
+    //for(var [idAuteur, auteur] of auteurs.entries()) {
+        // console.log(auteur.nom)
+        
+    // }
+
     $("#saisiRecherche").on('keyup',function(event){
         saisi = $(this).val().toLowerCase();      //valeur de sorti de l'imput type=Search
         $('.cardplace *').filter(function(){
             $(this).toggle($(this).children().html().toLowerCase().indexOf(saisi) > -1) 
              console.log($(this));
         });
-			
-			//ce methode permet de recherche un auteur et tous les bd qu'il a écrit (contrainte le nom doit etre exacte )
+       
         // // Recherche des albums de l'auteur 
         // for (var [idAlbum, album] of albums.entries()) {
         //     //recherche un auteur dans la tableau auteurs[]
@@ -37,7 +36,7 @@ $(document).ready(function(){       //.ready()
         //             }
         //         }
         //     }
-				//ce methode permet de recherche un série et tous les numero existant(contrainte le nom doit etre exacte )
+
         //     //recherche depuis le nom d'une serie 
         //     for(var [idSerie, serie] of series.entries()){
         //         if(album.idSerie == idSerie){
@@ -48,7 +47,7 @@ $(document).ready(function(){       //.ready()
         //     }
         // }
 
-        // <script> // script example jquery (site officiel) 
+        // <script>
         // $(document).ready(function(){
         //   $("#myInput").on("keyup", function() {
         //     var value = $(this).val().toLowerCase();
@@ -59,7 +58,7 @@ $(document).ready(function(){       //.ready()
         // });
         // </script>
 
-    });//fin de l'event on keyup 
+    });//fin de l'event onChange / change 
 
 });//fin de la methode ready
 

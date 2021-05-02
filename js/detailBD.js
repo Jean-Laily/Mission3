@@ -1,6 +1,6 @@
 /** Ce qu'on veut faire
- * Eventlistener lors d'un clic sur une image cible
- * Récupèrer id lié à l'image et lance l'affichage dynamique
+ * Event lors d'un clic sur une image spécifique
+ * recupère id lié a l'image et lance l'affichage 
  * avec tout les infos disponible pour l'image ciblé
  */
 
@@ -9,18 +9,15 @@
 // recupID("1");
 
 //init & affect variable
+// var numIDAlbum;
 const image = "./assets/albums/";   // cible l'emplacement des images (Version Grand)
 
 
 
-$(document).ready(function(){	
+$(document).ready(function(){
     /**
-     * M: Cette fonction permet de ciblé dans le DOM toutes les <a/> de la class @cardplace
-	 * et lors de l'event Clic on récupére l'ID de l'attribut numalbum et par la meme occasion 
-	 * on remplace tout ce qui se trouve dans la class par une chaine de caratère vide.
-	 * On appel ensuite les fonctions créationDetail(),recupID() afin de généré les details d'une image
-     * O: @param NULL
-	 * I: @param e => ce parametre 'e' permet de lancer la methode preventDefault().
+     * 
+     * 
      */
     $('.cardplace a').click(function(e){
         var numIDAlbum = $(this).attr('numalbum');  //retourne la valeur qui se trouve dans l'attribut ciblé
@@ -33,8 +30,7 @@ $(document).ready(function(){
     console.log("listener installé");   //Debuging console
 
     /**
-    * M: Permet la lecture des informations dans le tableau Albums[] fournir et affiche les inforamtions ciblé, 
-	* dans la page HTML  
+    * M: Permet la lecture des informations dans le tableau Album et les affiches dans la page HTML
     * O: @param NULL
     * I: @Param @num    =>   correspond à l'id de l'albums[]
     */
@@ -44,7 +40,7 @@ $(document).ready(function(){
         var album = albums.get(num);
         var serie = series.get(album.idSerie);                          //récupère l'idSerie depuis Albums[]
         var auteur = auteurs.get(album.idAuteur);                       //récupère l'idAuteur depuis Albums[]
-        var nomImage = serie.nom+"-"+album.numero+"-"+album.titre;      //récupère les informations nécessaires pour avoir le nom de l'image voulu
+        var nomImage = serie.nom+"-"+album.numero+"-"+album.titre;      //récupère les informations nécessaire pour avoir le nom de l'image ciblé
         
         //Expression regulière de nomImage afin de retirer ce qui defini entre (/ /g) et de le remplace par ChaineCarVoid
         nomImage = nomImage.replace(/'|!|\?|\.|"|:|\$/g, "");
@@ -57,12 +53,13 @@ $(document).ready(function(){
         $("#numSerie").text("Numéro Serie: "+album.numero);
         $("#prixBd").text("Prix: "+album.prix +" €");
 
-        //console.log("Titre: "+album.titre+", Serie de: "+serie.nom+", De l'auteur: "+auteur.nom+"Valeur de nomImage: "+nomImage);
+        console.log("Titre: "+album.titre+", Serie de: "+serie.nom+", De l'auteur: "+auteur.nom+"Valeur de nomImage: "+nomImage);
     };
 
    
     /**
-     * M: Permet de créer de facon dynamique une parti de page se trouvant dans index.html
+     * M: Permet de créer de facon dynamique 
+     * une parti de page html afin d'afficher le detail d'une BD depuis l'id récupérer
      * O: @NULL
      * I: @NULL
      */

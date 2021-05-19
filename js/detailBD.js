@@ -1,6 +1,6 @@
 /** Ce qu'on veut faire
  * Event lors d'un clic sur une image spécifique
- * recupère id lié a l'image et lance l'affichage 
+ * récupère id lié a l'image et lance l'affichage 
  * avec tout les infos disponible pour l'image ciblé
  */
 
@@ -21,13 +21,13 @@ $(document).ready(function(){
      */
     $('.cardplace a').click(function(e){
         var numIDAlbum = $(this).attr('numalbum');  //retourne la valeur qui se trouve dans l'attribut ciblé
-        $('.cardplace').html('');   //remplace tout le contenu de la class .cardplace par "" chaine carac vide
+        $('.cardplace').html('');   //remplace tout le contenu de la class .cardplace par "" chaîne carac vide
         // console.log(numIDAlbum);
-        creationDetailHtml();   //fonction permetant de créer un ensemble de code htlm depuis la class .cardplace
-        recupID(numIDAlbum);    //recupère la valeur de la variable @numIDAlbum pour faire la recherche
-        e.preventDefault();     //Annule le comportement par defaut d'une balise <a/>
+        creationDetailHtml();   //fonction permettant de créer un ensemble de code html depuis la class .cardplace
+        recupID(numIDAlbum);    //récupère la valeur de la variable @numIDAlbum pour faire la recherche
+        e.preventDefault();     //Annule le comportement par défaut d'une balise <a/>
     });
-    console.log("listener installé");   //Debuging console
+    console.log("listener installé");   //Debugging console
 
     /**
     * M: Permet la lecture des informations dans le tableau Album et les affiches dans la page HTML
@@ -58,7 +58,7 @@ $(document).ready(function(){
 
    
     /**
-     * M: Permet de créer de facon dynamique 
+     * M: Permet de créer de façon dynamique 
      * une parti de page html afin d'afficher le detail d'une BD depuis l'id récupérer
      * O: @NULL
      * I: @NULL
